@@ -1,5 +1,6 @@
 package com.service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +23,16 @@ public class CabFareService {
 	public List<CabFare> findAllCabDetails() {
 		return cabFareRepository.findAll();
 	}
-	
-	public Double findCabFare(String tolocation, String fromlocation, String typeofcab, Integer numberofseats) {
-		try {
 
-			return cabFareRepository.findCabFare(tolocation, fromlocation, typeofcab, numberofseats);
+	public Double findCabFare(String tolocation, String fromlocation,String typeofcab) {
+		try {
+			System.out.println("fare calculating...");
+			System.out.println("Amount in cabfare MS" + cabFareRepository.findCabFare(tolocation, fromlocation, typeofcab));
+			return cabFareRepository.findCabFare(tolocation, fromlocation, typeofcab);
 		} catch (Exception e) {
+			System.out.println(e);
 			return -1.0;
 		}
 	}
-	
+
 }

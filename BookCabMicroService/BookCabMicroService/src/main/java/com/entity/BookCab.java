@@ -12,7 +12,20 @@ import jakarta.persistence.Table;
 public class BookCab {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private int bookcabid;
+private Integer bookcabid;
+
+public BookCab(Integer bookcabid, String cname, LocalDateTime bookingtime, Double amount, String source,
+		String destination, String typeofcab, Integer numberofseats) {
+	super();
+	this.bookcabid = bookcabid;
+	this.cname = cname;
+	this.bookingtime = bookingtime;
+	this.amount = amount;
+	this.source = source;
+	this.destination = destination;
+	this.typeofcab = typeofcab;
+	this.numberofseats = numberofseats;
+}
 private String cname;
 private LocalDateTime bookingtime;		// current data and time.
 private Double amount;					// 
@@ -45,10 +58,10 @@ public String getDestination() {
 public void setDestination(String destination) {
 	this.destination = destination;
 }
-public int getBookcabid() {
+public Integer getBookcabid() {
 	return bookcabid;
 }
-public void setBookcabid(int bookcabid) {
+public void setBookcabid(Integer bookcabid) {
 	this.bookcabid = bookcabid;
 }
 public String getCname() {
@@ -69,5 +82,10 @@ public Double getAmount() {
 public void setAmount(Double amount) {
 	this.amount = amount;
 }
-
+@Override
+public String toString() {
+	return "BookCab [bookcabid=" + bookcabid + ", cname=" + cname + ", bookingtime=" + bookingtime + ", amount="
+			+ amount + ", source=" + source + ", destination=" + destination + ", typeofcab=" + typeofcab
+			+ ", numberofseats=" + numberofseats + "]";
+}
 }

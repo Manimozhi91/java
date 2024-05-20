@@ -36,11 +36,14 @@ public class CabFareController {
 	}
 	// http://localhost:8282/cabfare/findCabFare/A/B/Cab1/7
 	
-	@GetMapping(value = "findCabFare/{tolocation}/{fromlocation}/{typeofcab}/{numberofseats}",produces = MediaType.APPLICATION_JSON_VALUE)
-	public Double findCabFare(@PathVariable("tolocation") String tolocation, @PathVariable("fromlocation") String fromlocation,
-			@PathVariable("typeofcab") String typeofcab,@PathVariable("numberofseats") Integer numberofseats) {
-		return cabFareService.findCabFare(tolocation, fromlocation, typeofcab, numberofseats);		
+	
+//	}
+	@GetMapping(value = "findCabFare/{tolocation}/{fromlocation}/{typeofcab}")
+	public Double  findCabFare(@PathVariable("tolocation") String tolocation, @PathVariable("fromlocation") String fromlocation,
+			@PathVariable("typeofcab") String typeofcab) {
+	return cabFareService.findCabFare(tolocation, fromlocation,typeofcab);		
 	}
+
 }
 
 

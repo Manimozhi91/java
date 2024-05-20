@@ -3,9 +3,9 @@ package com.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.entity.BookCab;
+import com.entity.Book;
 
 @Repository
-public interface BookCabRepository extends JpaRepository<BookCab, Double>{
+public interface BookCabRepository extends JpaRepository<Book, Integer>{
 
 }
